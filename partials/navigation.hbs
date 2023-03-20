@@ -1,0 +1,46 @@
+<nav class='flex items-center flex-wrap 
+      bg-gradient-to-b from-[#00403F] to-[#018686]
+      lg:p-3 relative z-0 w-full justify-between h-full items.center sm:p-0'>
+        <a href='/' class='flex p-2 mr-4'> 
+          <div class='lg:w-[150px] 2xs:w-[100px] h-[50px] items-center justify-center flex'>
+            {{#if @site.logo}}
+                
+                <img src="{{@site.logo}}" alt="{{@site.title}}">
+            {{else}}
+                <h2>Medlr</h2>
+                {{!-- {{@site.title}} --}}
+            {{/if}}
+      
+            {{!-- <Image src={logo}/> --}}
+          </div>
+
+        </a>
+        
+        {{!-- {/*Note that in this div we will use a ternary operator to decide whether or not to display the content of the div  */} --}}
+        <div
+          class='md:flex md:flex-grow md:w-auto'
+        >
+        <button class='gh-burger group md:hidden 2xs:w-[100px] h-[50px] items-center justify-center flex border-2 rounded-lg bg-black'>
+            <div class='hidden group-focus:flex md:relative absolute md:inline-flex md:flex-row md:ml-auto md:w-auto w-full md:items-center md:mt-0 md:pr-0 items-start mt-5 pr-10 flex flex-col md:h-auto gap-x-12'>
+                <!-- Loop through the navigation items -->
+                {{#foreach navigation}}
+                <a href="{{url absolute="true"}}
+                " class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:text-[#00BFBE]">{{label}}</a>
+                {{/foreach}}
+                <!-- End the loop -->
+
+            </div>
+        </button>
+
+          <div class='hidden group-focus:flex md:relative sm:absolute md:inline-flex md:flex-row md:ml-auto md:w-auto w-full md:items-center items-start  flex flex-col md:h-auto gap-x-12'>
+              <!-- Loop through the navigation items -->
+              {{#foreach navigation}}
+              <a href="{{url absolute="true"}}
+              " class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:text-[#00BFBE]">{{label}}</a>
+              {{/foreach}}
+              <!-- End the loop -->
+
+          </div>
+        </div>
+        
+      </nav>

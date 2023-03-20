@@ -63,7 +63,7 @@ function css(done) {
         easyimport,
         autoprefixer(),
         cssnano(),
-        tailwind('.../tailwind.config.js'),
+        tailwind('./tailwind.config.js'),
       ]),
       dest('assets/built/', { sourcemaps: '.' }),
       livereload(),
